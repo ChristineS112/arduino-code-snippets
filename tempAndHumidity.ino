@@ -1,16 +1,13 @@
 #include "DHT.h"
-
-#include <IRremote.h>
-
+#include <LiquidCrystal.h>
 #define Type DHT11
+
 int sensePin = 6;
 DHT HT(sensePin, Type);
 float humidity;
 float tempC;
 float tempF;
 int setTime = 1000;
-
-#include <LiquidCrystal.h>
 
 int rs = 7;
 int en = 8;
@@ -19,8 +16,6 @@ int d5 = 10;
 int d6 = 11;
 int d7 = 12;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
-
-int IRpin = 3;
 
 void setup() {
   // put your setup code here, to run once:
@@ -45,5 +40,4 @@ void loop() {
   lcd.print(tempC);
   lcd.print("C");
   delay(setTime);
-
 }
